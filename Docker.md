@@ -21,12 +21,13 @@ sudo apt-get update
 sudo apt-get purge lxc-docker
 sudo apt-cache policy docker-engine
 
-# install the linux-image-extra package to enable the use of the aufs storage driver
+# installs the linux-image-extra package to enable the use of the aufs storage driver
 sudo apt-get install linux-image-extra-$(uname -r) # remove the trailing '-lowlatency'
 
-# install Docker
+# installs Docker
 sudo apt-get install docker-engine
 
-# run
+# runs Docker and checks its version
 sudo service docker start
+docker -v
 ```
