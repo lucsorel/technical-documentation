@@ -52,3 +52,11 @@ sudo ln -s /my/folder/for/docker /var/lib/docker
 # restarts docker
 sudo service docker start
 ```
+
+## Documentation
+See the [CLI commands](https://docs.docker.com/engine/reference/commandline/cli/).
+
+Docker flags:
+* of the [run command](https://docs.docker.com/engine/reference/commandline/run/) (see the [run refecrence](https://docs.docker.com/engine/reference/run/))
+  * -d: run a container in the detached mode/as a deamon
+  * -P / -p[host port]:[container port]: map any required network ports inside the container to its host (this lets us view our web application, for example)
