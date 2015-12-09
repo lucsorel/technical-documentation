@@ -1,4 +1,5 @@
 # Docker
+## Installation
 From the [Docker installation guide for Ubuntu](https://docs.docker.com/engine/installation/ubuntulinux/).
 
 ```bash
@@ -30,4 +31,24 @@ sudo apt-get install docker-engine
 # runs Docker and checks its version
 sudo service docker start
 docker -v
+```
+
+## Tuning
+I followed this 
+[How do I change the Docker image installation directory?](https://forums.docker.com/t/how-do-i-change-the-docker-image-installation-directory/1169) blog post to "change Docker's storage base directory (where container and images go)". The `-g` option in `/etc/default/docker` did not work but the symbolinc link did:
+```bash
+# stops docker
+sudo service docker stop
+
+# backs docker images up
+sudo tar -zcC /var/lib docker > ~/var_lib_docker-backup-$(date +%s).tar.gz
+
+# moves the /var/lib/docker directory content to your new partition (the trailing /docker directory will be created)
+sudo mv /var/lib/docker /my/folder/for
+
+# create a symbolic link (/!\ don't use ntfs partitions, docker would freeze your system)
+sudo ln -s /my/folder/for/docker /var/lib/docker
+
+# restarts docker
+sudo service docker start
 ```
