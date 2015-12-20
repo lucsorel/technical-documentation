@@ -57,6 +57,10 @@ sudo service docker start
 See the [CLI commands](https://docs.docker.com/engine/reference/commandline/cli/).
 
 Docker flags:
-* of the [run command](https://docs.docker.com/engine/reference/commandline/run/) (see the [run refecrence](https://docs.docker.com/engine/reference/run/))
+* of the [run command](https://docs.docker.com/engine/reference/commandline/run/) (see the [run reference](https://docs.docker.com/engine/reference/run/))
   * -d: run a container in the detached mode/as a deamon
   * -P / -p[host port]:[container port]: map any required network ports inside the container to its host (this lets us view our web application, for example)
+* delete all stopped containers with the [rm command](https://docs.docker.com/engine/reference/commandline/rm/)
+```bash
+docker rm $(docker ps -a -q)
+```
