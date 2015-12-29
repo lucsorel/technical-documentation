@@ -52,6 +52,15 @@ sudo ln -s /my/folder/for/docker /var/lib/docker
 # restarts docker
 sudo service docker start
 ```
+## Docker compose
+* installation
+```bash
+# from https://docs.docker.com/compose/install/ and https://github.com/docker/compose/releases/tag/1.5.2:
+curl -L https://github.com/docker/compose/releases/download/1.5.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+# test docker compose version
+docker-compose -v
+```
 
 ## Documentation
 See the [CLI commands](https://docs.docker.com/engine/reference/commandline/cli/).
