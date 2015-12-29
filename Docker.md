@@ -73,3 +73,7 @@ Docker flags:
 ```bash
 docker rm $(docker ps -a -q)
 ```
+* deletes dangling images
+```bash
+docker rmi $(docker images -f 'dangling=true' -q)
+```
