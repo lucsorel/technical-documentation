@@ -9,16 +9,21 @@ sudo apt-get install atom
 ```
 
 ## Atom packages
-* install [git-control](https://atom.io/packages/git-control) to retrieve and push code editions to the central repository
-* [markdown-preview](https://atom.io/packages/markdown-preview) is usually already installed
+Some packages I use:
+* [git-control](https://atom.io/packages/git-control) to retrieve/push editions from/to the central repository
+* [markdown-preview](https://atom.io/packages/markdown-preview) is usually already installed to view and edit markdown files
 * [language-docker](https://atom.io/packages/language-docker) to edit `Dockerfile` files
-* uninstall/disable `language-c`, `language-csharp` (many more could be disabled) for speed improvement, `metrics` to disable the Google Analytics tracking of Atom use Settings:
-* `Settings` section:
-  * Show Line Numbers
-  * Soft Tabs
-  * Font Size: 15 (suggestion)
-  * Tab Length: 4
-  * make sure that the `Ensure Single Trailing Newline` checkbox of the `whitespace` package is checked to make Atom add a newline character at the end of edited files
+* [language-r](https://atom.io/packages/language-r) to edit R scripts
+
+Some packages I removed/disabled for speed improvement:
+* uninstall/disable `language-c`, `language-csharp` (many more could be disabled) for speed improvement, `metrics` to disable the Google Analytics tracking of Atom use
+
+Settings:
+* Show Line Numbers
+* Soft Tabs
+* Font Size: 15 (suggestion)
+* Tab Length: 4
+* make sure that the `Ensure Single Trailing Newline` checkbox of the `whitespace` package is checked to make Atom add a newline character at the end of edited files
 
 ## Snippets
 Snippets are code templates that can be triggered when starting to type a `code prefix` and pressing the `tab` key to validate a suggested snippet. Here are the ones I often use - some refer to the [i18n-express](https://github.com/lucsorel/i18n-express) project I developed ("*an ExpressJs middleware to internationalize templates and manage URL routing for internationalized web applications*"):
