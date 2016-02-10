@@ -53,11 +53,15 @@ sudo ln -s /my/folder/for/docker /var/lib/docker
 sudo service docker start
 ```
 ## Docker compose
-* installation
+* installation (requires superuser rights)
 ```bash
-# from https://docs.docker.com/compose/install/ and https://github.com/docker/compose/releases/tag/1.5.2:
-curl -L https://github.com/docker/compose/releases/download/1.5.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-chmod +x /usr/local/bin/docker-compose
+sudo su
+
+# to uninstall a previous version
+rm /usr/local/bin/docker-compose
+
+# from https://docs.docker.com/compose/install/ and https://github.com/docker/compose/releases/tag/1.6.0:
+curl -L https://github.com/docker/compose/releases/download/1.6.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
 # test docker compose version
 docker-compose -v
 ```
