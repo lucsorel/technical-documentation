@@ -105,6 +105,9 @@ Snippets are code templates that can be triggered when starting to type a `code 
 	'Module exports':
 		'prefix': 'mexp'
 		'body': 'module.exports = $1;'
+	'Use strict':
+		'prefix': 'usestrict'
+		'body': '\'use strict\';\n'
 	'Describe (unit-testing)':
 		'prefix': 'describe'
 		'body': """
@@ -139,6 +142,9 @@ Snippets are code templates that can be triggered when starting to type a `code 
 		 */
 		"""
 '.text.html':
+	'ng-click':
+		'prefix': 'ngc'
+		'body': 'ng-click="$1"'
 	'i18n-express key':
 		'prefix': 'ikh'
 		'body': '__{$1}'
@@ -151,6 +157,15 @@ Snippets are code templates that can be triggered when starting to type a `code 
 	'Html entity':
 		'prefix': 'ent'
 		'body': '&$1;'
+	'Thymeleaf comment':
+		'prefix': 'th-comment'
+		'body': '<!--/* $1 */-->'
+	'Thymeleaf if':
+		'prefix': 'th-if'
+		'body': 'th:if="${$1}"'
+	'Thymeleaf attributes':
+		'prefix': 'th-attr'
+		'body': 'th:attr="$1=${$2}"'
 '.source.json':
 	'i18n-express key':
 		'prefix': 'ikj'
