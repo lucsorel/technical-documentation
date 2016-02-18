@@ -88,3 +88,8 @@ docker rm $(docker ps -a -q)
 ```bash
 docker rmi $(docker images -f 'dangling=true' -q)
 ```
+
+* forces the deletion of all images
+```bash
+docker rmi -f $(docker images -q)
+```
