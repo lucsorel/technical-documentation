@@ -23,6 +23,7 @@ ls: list
 bn: bundle
 up: update
 c: config
+outdated: lists the dependencies which are out-of-date
 ```
 
 * NPM flags
