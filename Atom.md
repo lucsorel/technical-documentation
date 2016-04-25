@@ -27,6 +27,8 @@ Settings:
 
 ## Snippets
 Snippets are code templates that can be triggered when starting to type a `code prefix` and pressing the `tab` key to validate a suggested snippet. Here are the ones I often use - some refer to the [i18n-express](https://github.com/lucsorel/i18n-express) project I developed ("*an ExpressJs middleware to internationalize templates and manage URL routing for internationalized web applications*"):
+
+### Generic JS snippets
 ```yaml
 '.source.js':
 	'Console log':
@@ -142,30 +144,23 @@ Snippets are code templates that can be triggered when starting to type a `code 
 		 */
 		"""
 '.text.html':
-	'ng-click':
-		'prefix': 'ngc'
-		'body': 'ng-click="$1"'
-	'i18n-express key':
-		'prefix': 'ikh'
-		'body': '__{$1}'
-	'i18n-express key with param':
-		'prefix': 'ikhp'
-		'body': '__{$1%%$2%%}'
 	'Insecable space':
 		'prefix': 'nbsp'
 		'body': '&nbsp;'
 	'Html entity':
 		'prefix': 'ent'
 		'body': '&$1;'
-	'Thymeleaf comment':
-		'prefix': 'th-comment'
-		'body': '<!--/* $1 */-->'
-	'Thymeleaf if':
-		'prefix': 'th-if'
-		'body': 'th:if="${$1}"'
-	'Thymeleaf attributes':
-		'prefix': 'th-attr'
-		'body': 'th:attr="$1=${$2}"'
+```
+
+### I18n-express snippets
+```yaml
+'.text.html':
+	'i18n-express key':
+		'prefix': 'ikh'
+		'body': '__{$1}'
+	'i18n-express key with param':
+		'prefix': 'ikhp'
+		'body': '__{$1%%$2%%}'
 '.source.json':
 	'i18n-express key':
 		'prefix': 'ikj'
@@ -173,4 +168,74 @@ Snippets are code templates that can be triggered when starting to type a `code 
 	'i18n-express message parameter':
 		'prefix': 'ipj'
 		'body': '__{$1:$2}'
+```
+
+### AngularJS 1.x snippets
+```yaml
+'.source.js':
+    'AngularJS injection':
+        'prefix': 'inject'
+        'body': '$inject = [\'$1\'];'
+    'AngularJS $timeout service':
+        'prefix': 'timeout-ng'
+        'body': "$timeout($2, $1);"
+    'AngularJS provider with dependencies':
+        'prefix': 'provider-ng'
+        'body': """
+        $1.$inject = [\'$2\'];
+        function $1($2) {
+            $3
+        });
+        """
+'.text.html':
+    'ng-class':
+        'prefix': 'ngcss'
+        'body': 'ng-class="$1"'
+    'ng-click':
+        'prefix': 'ngck'
+        'body': 'ng-click="$1"'
+    'ng-change':
+        'prefix': 'ngcg'
+        'body': 'ng-change="$1"'
+    'ng-if':
+        'prefix': 'ngi'
+        'body': 'ng-if="$1"'
+    'ng-model':
+        'prefix': 'ngm'
+        'body': 'ng-model="$1"'
+    'ng-show':
+        'prefix': 'ngs'
+        'body': 'ng-show="$1"'
+    'ng-switch':
+        'prefix': 'ngsw'
+        'body': 'ng-switch="$1"'
+    'ng-switch-when':
+        'prefix': 'ngsww'
+        'body': 'ng-switch-when="$1"'
+    'ng-switch-default':
+        'prefix': 'ngswd'
+        'body': 'ng-switch-default=""'
+```
+
+### Thymeleaf snippets
+```yaml
+'.text.html':
+    'Thymeleaf comment':
+        'prefix': 'th-comment'
+        'body': '<!--/* $1 */-->'
+    'Thymeleaf if':
+        'prefix': 'th-if'
+        'body': 'th:if="${$1}"'
+    'Thymeleaf attributes':
+        'prefix': 'th-attr'
+        'body': 'th:attr="$1=${$2}"'
+    'Thymeleaf with':
+        'prefix': 'th-with'
+        'body': 'th:with="$1=${$2}"'
+    'Thymeleaf class':
+        'prefix': 'th-class'
+        'body': 'th:class="${$1}" ? \'$2\' : \'$3\''
+    'Thymeleaf image src':
+        'prefix': 'th-src'
+        'body': 'th:src="@{$1}"'
 ```
