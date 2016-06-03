@@ -31,7 +31,7 @@ ls -l /dev/mapper/ciphered
 sudo cryptsetup -v status ciphered
 
 # LUKS headers of the partition
-sudo cryptsetup luksDump /dev/sda8 > devbox_luks_header.txt
+sudo cryptsetup luksDump /dev/sda8 > ciphered_luks_header.txt
 
 # overwrites the partition with 0s
 sudo dd if=/dev/zero of=/dev/mapper/ciphered
