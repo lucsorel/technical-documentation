@@ -25,6 +25,14 @@ Settings:
 * Tab Length: 4
 * make sure that the `Ensure Single Trailing Newline` checkbox of the `whitespace` package is checked to make Atom add a newline character at the end of edited files
 
+## Keyboard shortcuts
+Editing the `keymap.cson` allows to add some shortcuts:
+* reveal opened file in tree view
+```cson
+'atom-text-editor':
+  'ctrl-alt-/': 'tree-view:reveal-active-file'
+```
+
 ## Snippets
 Snippets are code templates that can be triggered when starting to type a `code prefix` and pressing the `tab` key to validate a suggested snippet. Here are the ones I often use - some refer to the [i18n-express](https://github.com/lucsorel/i18n-express) project I developed ("*an ExpressJs middleware to internationalize templates and manage URL routing for internationalized web applications*"):
 
