@@ -10,10 +10,18 @@ sudo apt-get install atom
 
 ## Atom packages
 Some packages I use:
-* [git-control](https://atom.io/packages/git-control) to retrieve/push editions from/to the central repository
 * [markdown-preview](https://atom.io/packages/markdown-preview) is usually already installed to view and edit markdown files
-* [language-docker](https://atom.io/packages/language-docker) to edit `Dockerfile` files
-* [language-r](https://atom.io/packages/language-r) to edit R scripts
+* version control:
+  * [git-control](https://atom.io/packages/git-control) to retrieve/push editions from/to the central repository
+  * [blame](https://atom.io/packages/blame) to view the commit details of each line. Setting a custom repository URL may be necessary when using a custom git config to handle multiple ssh keys
+* [linter-eslint](https://atom.io/packages/linter-eslint) to use eslint rules and display linting failures
+* minimap:
+  * [minimap](https://atom.io/packages/minimap) to display a snapshot of the displayed source code
+  * [minimap-autohide](https://atom.io/packages/minimap-autohide) so that minimap displays on scroll and hides when coding
+  * [minimap-linter](https://atom.io/packages/minimap-linter) to display linting errors in the minimap
+* language packages:
+  * [language-docker](https://atom.io/packages/language-docker) to edit `Dockerfile` files
+  * [language-r](https://atom.io/packages/language-r) to edit R scripts
 
 Some packages I removed/disabled for speed improvement:
 * uninstall/disable `language-c`, `language-csharp` (many more could be disabled) for speed improvement, `metrics` to disable the Google Analytics tracking of Atom use
