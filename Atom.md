@@ -14,6 +14,7 @@ Some packages I use:
 * version control:
   * [git-control](https://atom.io/packages/git-control) to retrieve/push editions from/to the central repository
   * [blame](https://atom.io/packages/blame) to view the commit details of each line. Setting a custom repository URL may be necessary when using a custom git config to handle multiple ssh keys
+* [file-icons](https://atom.io/packages/file-icons) with the `coloured` checkbox unticked
 * [linter-eslint](https://atom.io/packages/linter-eslint) to use eslint rules and display linting failures. Tick the `Fix on save` checkbox to fix the indentation and the rules that eslint can apply by itself
 * minimap:
   * [minimap](https://atom.io/packages/minimap) to display a snapshot of the displayed source code
