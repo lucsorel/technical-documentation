@@ -1,6 +1,14 @@
 # Docker
 ## Installation
-From the [Docker installation guide for Ubuntu](https://docs.docker.com/engine/installation/ubuntulinux/).
+Two options:
+
+* the short one 
+
+```
+wget -qO- https://get.docker.com/ | sh
+```
+
+* the official way from the [Docker installation guide for Ubuntu](https://docs.docker.com/engine/installation/ubuntulinux/).
 
 ```bash
 # checks the Kernel version (must be >3.1.0)
