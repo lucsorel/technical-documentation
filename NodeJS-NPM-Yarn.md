@@ -56,3 +56,14 @@ npm publish
 
 ## NPM as a build tool
 http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/
+
+# Yarn
+From [official installation page](https://yarnpkg.com/lang/en/docs/install/):
+
+```bash
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get update && sudo apt-get install yarn
+```
+
+See the [commands documentation](https://yarnpkg.com/en/docs/usage).
