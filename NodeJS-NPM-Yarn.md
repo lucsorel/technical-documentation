@@ -1,14 +1,18 @@
 # NodeJS and NPM installation
+
+* when upgrading from an older version, uninstall ``nodejs`` and ``npm`` beforehand:
+```bash
+sudo apt-get purge nodejs npm
+```
+
 * install from PPA
 In Debian distributions, NodeJS and NPM can be installed and updated from the [NodeJS dedicated APT repository](http://doc.ubuntu-fr.org/nodejs):
 
 ```bash
 sudo apt-get install curl
-# for 4.x LTS versions
-curl -sL https://deb.nodesource.com/setup_4.x | sudo bash -
-# for 5.x latest versions
-curl -sL https://deb.nodesource.com/setup_5.x | sudo bash -
-sudo apt-get install nodejs
+# for 6.x LTS versions
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install -y nodejs
 ```
 
 # NPM tips
