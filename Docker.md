@@ -14,27 +14,32 @@ wget -qO- https://get.docker.com/ | sh
 # checks the Kernel version (must be >3.1.0)
 uname -r
 
+# install packages to allow apt to use a repository over HTTPS
+sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+
 # adds the gpg key of the Docker releases repository
-sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 # gets Ubuntu version
-lsb_release -a
+lsb_release -cs
+# but LinuxMint versions override it (Sonya -> xenial)
 
 # adds the repository for the distribution
-sudo nano /etc/apt/sources.list.d/docker.list
-
-deb https://apt.dockerproject.org/repo ubuntu-wily main
+## (Ubuntu)
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+## (LinuxMint)
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
 
 # updates the repository update policy
 sudo apt-get update
-sudo apt-get purge lxc-docker
-sudo apt-cache policy docker-engine
+sudo apt-get purge lxc-docker docker docker-engine docker.io
+sudo apt-cache madison docker-ce
 
 # installs the linux-image-extra package to enable the use of the aufs storage driver
 sudo apt-get install linux-image-extra-$(uname -r) # remove the trailing '-lowlatency'
 
 # installs Docker
-sudo apt-get install docker-engine
+sudo apt-get install docker-ce
 
 # runs Docker and checks its version
 sudo service docker start
@@ -43,7 +48,7 @@ docker -v
 
 ## Tuning
 I followed this 
-[How do I change the Docker image installation directory?](https://forums.docker.com/t/how-do-i-change-the-docker-image-installation-directory/1169) blog post to "change Docker's storage base directory (where container and images go)". The `-g` option in `/etc/default/docker` did not work but the symbolinc link did:
+[How do I change the Docker image installation directory?](https://forums.docker.com/t/how-do-i-change-the-docker-image-installation-directory/1169) blog post to "change Docker's storage base directory (where containers and images go)". The `-g` option in `/etc/default/docker` did not work but the symbolinc link did:
 ```bash
 # stops docker
 sudo service docker stop
@@ -61,7 +66,9 @@ sudo ln -s /my/folder/for/docker /var/lib/docker
 sudo service docker start
 ```
 ## Docker compose
+
 * installation (requires superuser rights)
+
 ```bash
 sudo su
 
