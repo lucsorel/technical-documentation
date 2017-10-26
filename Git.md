@@ -5,7 +5,7 @@ The `--global` flag saves the configuration in `~/.gitconfig`. Remove it to save
 ```sh
 # identification details used when committing
 git config --global user.name "Firstname Lastname"
-git config --global user.email "your.email@energiency.com"
+git config --global user.email "your.email@provider.com"
 
 # avoids merge commits when rebasing
 git config --global pull.rebase true
