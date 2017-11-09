@@ -55,6 +55,18 @@ git rebase master
 # validate (tests)
 git push -f origin 42-add-browser-notifications
 ```
+Rebasing `master` on the commits of your branch can become painful, particularly if you do it often and there are some conflicts
+a long list of commits of your branch. To reduce the pain:
+* squash the many commits of your branch (see § **Finish the feature branch**) and `push --force` this new commits history (ensure that other people working on the branch are not working on it, that you have the most recent state of the branch)
+* force-update the commits history of other people working on the branch:
+
+```sh
+git checkout 42-add-browser-notifications
+# loads the new commits history that was force-pushed
+git fetch
+# override your local history with the one that was force-pushed
+git reset --hard origin/42-add-browser-notifications
+```
 
 ## Finish the feature branch
 
