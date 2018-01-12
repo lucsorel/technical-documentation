@@ -105,18 +105,20 @@ git push origin :42-add-browser-notifications
 
 # Git bisect
 
-Git bisect helps you identify a commit at which a feature has been broken for instance.
+Git bisect helps you identify a commit at which a feature has been broken for instance, by performing a dichotomic series of checkout between a "bad commit" (a commit at which the feature is broken) and a "good commit" (a commit at which the feature works).
 
 ```bash
 git bisect start {bad commit} {good commit}
-# validates a good version
+# validates a commit corresponding to a good version
 git bisect good
-# validates a bad version
+# invalidates a commit corresponding to a bad version
 git bisect bad
-# skips a broken commit from the bisect process (eg. if minified files were not committed)
+# skips a broken commit from the bisect process (eg. a work-in-progress commit at which the application does not run at all)
 git bisect skip
 
-# ends the bisect process
+# git bisect iteratively checkouts at another commit and eventually tells you the commit at which the feature was broken
+
+# ends the bisect process by checkouting the HEAD commit
 git bisect reset
 ```
 
