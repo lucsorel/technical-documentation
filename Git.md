@@ -7,6 +7,9 @@ The `--global` flag saves the configuration in `~/.gitconfig`. Remove it to save
 git config --global user.name "Firstname Lastname"
 git config --global user.email "your.email@provider.com"
 
+# push only the commits of the current branch (default behavior)
+git config --global push.default matching
+
 # avoids merge commits when rebasing
 git config --global pull.rebase true
 
