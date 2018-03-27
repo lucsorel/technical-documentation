@@ -10,12 +10,19 @@ This tutorial explains:
 I used `gparted` to reduce the size of an existing partition and create a new logical one (`sda8` in this tutorial).
 
 ## Crypt setup installation
-```bash
+```sh
 sudo apt-get install cryptsetup
 ```
+## List the partitions
 
+To list the devices corresponding to your partitions:
+
+ ```sh
+ sudo fdisk -l
+ ```
+ 
 ## Setting the encryption mechanism on the partition
-```bash
+```sh
 sudo cryptsetup -y -v luksFormat /dev/sda8
 # -> YES (agree to encrypt and loose all the data on the partition)
 # -> (type the de/en/cryption passphrase, don't forget it!)
@@ -48,7 +55,7 @@ I have these scripts in my home directory.
 
 * `mount-ciphered.sh`: script to mount the directory (NOTE: in the `chown` instruction, change `USER` by your Linux user name)
 
-```bash
+```sh
 #! /bin/bash
 CIPHERED_DIR="~/ciphered"
 if [ -d "$CIPHERED_DIR" ]; then
@@ -67,7 +74,7 @@ sudo mount /dev/mapper/ciphered "$CIPHERED_DIR"
 
 * `umount-ciphered.sh`: script to unmount the directory
 
-```bash
+```sh
 #! /bin/bash
 CIPHERED_DIR="~/ciphered"
 sudo umount "$CIPHERED_DIR"
