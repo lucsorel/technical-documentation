@@ -49,125 +49,123 @@ Snippets are code templates that can be triggered when starting to type a `code 
 
 ```yaml
 '.source.js':
-	'Console log':
-    	'prefix': 'clog'
-    	'body': 'console.log(${1:\'\'});$2'
-	'If':
-		'prefix': 'if'
-		'body': """
-			if ($1) {
-				$2
-			}
-		"""
-	'Elseif':
-		'prefix': 'elif'
-		'body': """
-			else if ($1) {
-				$2
-			}
-		"""
-	'Else':
-		'prefix': 'el'
-		'body': """
-			else {
-				$1
-			}
-		"""
-	'If else':
-		'prefix': 'ifel'
-		'body': """
-			if ($1) {
-				$2
-			}
-			else {
-				$3
-			}
-		"""
-	'If elseif':
-		'prefix': 'ifelif'
-		'body': """
-			if ($1) {
-				$2
-			}
-			else if ($3) {
-				$4
-			}
-		"""
-	'If null':
-		'prefix': 'ifn'
-		'body': """
-			if (null === $1) {
-				$2
-			}
-		"""
-	'If not null':
-		'prefix': 'ifnn'
-		'body': """
-			if (null !== $1) {
-				$2
-			}
-		"""
-	'Function':
-		'prefix': 'function'
-		'body': """
-		function($1) {
-			$2
-		}
-		"""
-	'Immediately-invoked function expression':
-		'prefix': 'iif'
-		'body': """
-		(function() {
-			'use strict';
-			$1
-		}());
-		"""
-	'Module exports':
-		'prefix': 'mexp'
-		'body': 'module.exports = $1;'
-	'Use strict':
-		'prefix': 'usestrict'
-		'body': '\'use strict\';\n'
-	'Describe (unit-testing)':
-		'prefix': 'describe'
-		'body': """
-		describe('# $1', function() {
-			$2
-		});
-		"""
-	'It (unit-testing)':
-		'prefix': 'it'
-		'body': """
-		it('$1', function() {
-			$2
-		});
-		"""
-	'Assert equal (unit-testing)':
-		'prefix': 'asseq'
-		'body': "assert.equal($1, $2, '$3');"
-	'Assert true (unit-testing)':
-		'prefix': 'asstrue'
-		'body': "assert.equal($1, true, '$2');"
-	'Assert false (unit-testing)':
-		'prefix': 'assfalse'
-		'body': "assert.equal($1, false, '$2');"
-	'Block comment (class/function)':
-		'prefix': 'commentblock'
-		'body': """
-		/**
-		 * $1
-		 *
-		 * @param $2
-		 * @return $3
-		 */
-		"""
+  'Console log':
+      'prefix': 'clog'
+      'body': 'console.log(${1:\'\'})$2'
+  'If':
+    'prefix': 'if'
+    'body': """
+      if ($1) {
+        $2
+      }
+    """
+  'Elseif':
+    'prefix': 'elif'
+    'body': """
+      else if ($1) {
+        $2
+      }
+    """
+  'Else':
+    'prefix': 'el'
+    'body': """
+      else {
+        $1
+      }
+    """
+  'If else':
+    'prefix': 'ifel'
+    'body': """
+      if ($1) {
+        $2
+      } else {
+        $3
+      }
+    """
+  'If elseif':
+    'prefix': 'ifelif'
+    'body': """
+      if ($1) {
+        $2
+      } else if ($3) {
+        $4
+      }
+    """
+  'If null':
+    'prefix': 'ifn'
+    'body': """
+      if (null === $1) {
+        $2
+      }
+    """
+  'If not null':
+    'prefix': 'ifnn'
+    'body': """
+      if (null !== $1) {
+        $2
+      }
+    """
+  'Function':
+    'prefix': 'function'
+    'body': """
+    function($1) {
+      $2
+    }
+    """
+  'Immediately-invoked function expression':
+    'prefix': 'iif'
+    'body': """
+    (function() {
+      'use strict';
+      $1
+    }());
+    """
+  'Module exports':
+    'prefix': 'mexp'
+    'body': 'module.exports = $1'
+  'Use strict':
+    'prefix': 'usestrict'
+    'body': '\'use strict\'\n'
+  'Describe (unit-testing)':
+    'prefix': 'describe'
+    'body': """
+    describe('# $1', function() {
+      $2
+    });
+    """
+  'It (unit-testing)':
+    'prefix': 'it'
+    'body': """
+    it('$1', function() {
+      $2
+    });
+    """
+  'Assert equal (unit-testing)':
+    'prefix': 'asseq'
+    'body': "assert.equal($1, $2, '$3')"
+  'Assert true (unit-testing)':
+    'prefix': 'asstrue'
+    'body': "assert.equal($1, true, '$2')"
+  'Assert false (unit-testing)':
+    'prefix': 'assfalse'
+    'body': "assert.equal($1, false, '$2')"
+  'Block comment (class/function)':
+    'prefix': 'commentblock'
+    'body': """
+    /**
+     * $1
+     *
+     * @param $2
+     * @return $3
+     */
+    """
 '.text.html':
-	'Insecable space':
-		'prefix': 'nbsp'
-		'body': '&nbsp;'
-	'Html entity':
-		'prefix': 'ent'
-		'body': '&$1;'
+  'Insecable space':
+    'prefix': 'nbsp'
+    'body': '&nbsp;'
+  'Html entity':
+    'prefix': 'ent'
+    'body': '&$1;'
 ```
 
 ### I18n-express snippets
@@ -193,69 +191,69 @@ Snippets are code templates that can be triggered when starting to type a `code 
 
 ```yaml
 '.source.js':
-    'AngularJS injection':
-        'prefix': 'inject'
-        'body': '$inject = [\'$1\'];'
-    'AngularJS $timeout service':
-        'prefix': 'timeout-ng'
-        'body': "$timeout($2, $1);"
-    'AngularJS provider with dependencies':
-        'prefix': 'provider-ng'
-        'body': """
-        $1.$inject = [\'$2\'];
-        function $1($2) {
-            $3
-        });
-        """
+  'AngularJS injection':
+    'prefix': 'inject'
+    'body': '$inject = [\'$1\'];'
+  'AngularJS $timeout service':
+    'prefix': 'timeout-ng'
+    'body': "$timeout($2, $1)"
+  'AngularJS provider with dependencies':
+    'prefix': 'provider-ng'
+    'body': """
+    $1.$inject = [\'$2\']
+    function $1($2) {
+      $3
+    });
+    """
 '.text.html':
-    'ng-class':
-        'prefix': 'ngcss'
-        'body': 'ng-class="$1"'
-    'ng-click':
-        'prefix': 'ngck'
-        'body': 'ng-click="$1"'
-    'ng-change':
-        'prefix': 'ngcg'
-        'body': 'ng-change="$1"'
-    'ng-if':
-        'prefix': 'ngi'
-        'body': 'ng-if="$1"'
-    'ng-model':
-        'prefix': 'ngm'
-        'body': 'ng-model="$1"'
-    'ng-show':
-        'prefix': 'ngs'
-        'body': 'ng-show="$1"'
-    'ng-switch':
-        'prefix': 'ngsw'
-        'body': 'ng-switch="$1"'
-    'ng-switch-when':
-        'prefix': 'ngsww'
-        'body': 'ng-switch-when="$1"'
-    'ng-switch-default':
-        'prefix': 'ngswd'
-        'body': 'ng-switch-default=""'
+  'ng-class':
+    'prefix': 'ngcss'
+    'body': 'ng-class="$1"'
+  'ng-click':
+    'prefix': 'ngck'
+    'body': 'ng-click="$1"'
+  'ng-change':
+    'prefix': 'ngcg'
+    'body': 'ng-change="$1"'
+  'ng-if':
+    'prefix': 'ngi'
+    'body': 'ng-if="$1"'
+  'ng-model':
+    'prefix': 'ngm'
+    'body': 'ng-model="$1"'
+  'ng-show':
+    'prefix': 'ngs'
+    'body': 'ng-show="$1"'
+  'ng-switch':
+    'prefix': 'ngsw'
+    'body': 'ng-switch="$1"'
+  'ng-switch-when':
+    'prefix': 'ngsww'
+    'body': 'ng-switch-when="$1"'
+  'ng-switch-default':
+    'prefix': 'ngswd'
+    'body': 'ng-switch-default=""'
 ```
 
 ### Thymeleaf snippets
 ```yaml
 '.text.html':
-    'Thymeleaf comment':
-        'prefix': 'th-comment'
-        'body': '<!--/* $1 */-->'
-    'Thymeleaf if':
-        'prefix': 'th-if'
-        'body': 'th:if="${$1}"'
-    'Thymeleaf attributes':
-        'prefix': 'th-attr'
-        'body': 'th:attr="$1=${$2}"'
-    'Thymeleaf with':
-        'prefix': 'th-with'
-        'body': 'th:with="$1=${$2}"'
-    'Thymeleaf class':
-        'prefix': 'th-class'
-        'body': 'th:class="${$1}" ? \'$2\' : \'$3\''
-    'Thymeleaf image src':
-        'prefix': 'th-src'
-        'body': 'th:src="@{$1}"'
+  'Thymeleaf comment':
+    'prefix': 'th-comment'
+    'body': '<!--/* $1 */-->'
+  'Thymeleaf if':
+    'prefix': 'th-if'
+    'body': 'th:if="${$1}"'
+  'Thymeleaf attributes':
+    'prefix': 'th-attr'
+    'body': 'th:attr="$1=${$2}"'
+  'Thymeleaf with':
+    'prefix': 'th-with'
+    'body': 'th:with="$1=${$2}"'
+  'Thymeleaf class':
+    'prefix': 'th-class'
+    'body': 'th:class="${$1}" ? \'$2\' : \'$3\''
+  'Thymeleaf image src':
+    'prefix': 'th-src'
+    'body': 'th:src="@{$1}"'
 ```
