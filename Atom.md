@@ -174,19 +174,19 @@ Snippets are code templates that can be triggered when starting to type a `code 
 
 ```yaml
 '.text.html':
-	'i18n-express key':
-		'prefix': 'ikh'
-		'body': '__{$1}'
-	'i18n-express key with param':
-		'prefix': 'ikhp'
-		'body': '__{$1%%$2%%}'
+  'i18n-express key':
+    'prefix': 'ikh'
+    'body': '__{$1}'
+  'i18n-express key with param':
+    'prefix': 'ikhp'
+    'body': '__{$1%%$2%%}'
 '.source.json':
-	'i18n-express key':
-		'prefix': 'ikj'
-		'body': '"$1": "$2",'
-	'i18n-express message parameter':
-		'prefix': 'ipj'
-		'body': '__{$1:$2}'
+  'i18n-express key':
+    'prefix': 'ikj'
+    'body': '"$1": "$2",'
+  'i18n-express message parameter':
+    'prefix': 'ipj'
+    'body': '__{$1:$2}'
 ```
 
 ### AngularJS 1.x snippets
