@@ -46,6 +46,7 @@ Editing the `keymap.cson` allows to add some shortcuts:
 Snippets are code templates that can be triggered when starting to type a `code prefix` and pressing the `tab` key to validate a suggested snippet. Here are the ones I often use - some refer to the [i18n-express](https://github.com/lucsorel/i18n-express) project I developed ("*an ExpressJs middleware to internationalize templates and manage URL routing for internationalized web applications*"):
 
 ### Generic JS snippets
+
 ```yaml
 '.source.js':
 	'Console log':
@@ -170,6 +171,7 @@ Snippets are code templates that can be triggered when starting to type a `code 
 ```
 
 ### I18n-express snippets
+
 ```yaml
 '.text.html':
 	'i18n-express key':
@@ -188,6 +190,7 @@ Snippets are code templates that can be triggered when starting to type a `code 
 ```
 
 ### AngularJS 1.x snippets
+
 ```yaml
 '.source.js':
     'AngularJS injection':
