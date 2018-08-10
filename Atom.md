@@ -1,9 +1,11 @@
 # Atom
 ## Installation
-Use a [PPA](http://www.webupd8.org/2014/06/atom-text-editor-available-for-linux.html) to install the most up-to-date version:
 
-```bash
-sudo add-apt-repository ppa:webupd8team/atom
+Source: official [installation documentation](https://flight-manual.atom.io/getting-started/sections/installing-atom/#platform-linux). For debian- and ubuntu- based distributions:
+
+```sh
+curl -sL https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
+sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
 sudo apt-get update
 sudo apt-get install atom
 ```
