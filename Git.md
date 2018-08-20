@@ -110,7 +110,7 @@ git push origin :42-add-browser-notifications
 
 Git bisect helps you identify a commit at which a feature has been broken for instance, by performing a dichotomic series of checkout between a "bad commit" (a commit at which the feature is broken) and a "good commit" (a commit at which the feature works).
 
-```bash
+```sh
 git bisect start {bad commit} {good commit}
 # validates a commit corresponding to a good version
 git bisect good
@@ -132,9 +132,15 @@ I use [P4Merge](https://www.perforce.com/downloads/visual-merge-tool) to handle 
 * [download P4Merge](https://www.perforce.com/downloads/helix#product-10) and dezip it in `~/Apps`
 * declares `P4Merge tools` in your `PATH` to let git know about this tool when it encounters a conflict, by adding these instructions in your `~/.profile` file:
 
-```bash
+```sh
 # P4Merge Git merge tools (added on ...)
 if [ -d "$HOME/Apps/p4v/bin" ] ; then
     PATH="$HOME/Apps/p4v/bin:$PATH"
 fi
+```
+
+Then you will be able to launch P4Merge when a conflict occurs while rebasing/merging:
+
+```sh
+git mergetool
 ```
