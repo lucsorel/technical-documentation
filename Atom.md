@@ -37,11 +37,21 @@ Settings:
 * make sure that the `Ensure Single Trailing Newline` checkbox of the `whitespace` package is checked to make Atom add a newline character at the end of edited files
 
 ## Keyboard shortcuts
+
 Editing the `keymap.cson` allows to add some shortcuts:
+
 * reveal opened file in tree view
+
 ```cson
 'atom-text-editor':
   'ctrl-alt-/': 'tree-view:reveal-active-file'
+```
+
+* toggle soft-wrap
+
+```cson
+'atom-text-editor': # do not duplicate this line for each shortcut
+  'ctrl-alt-=': 'editor:toggle-soft-wrap'
 ```
 
 ## Snippets
