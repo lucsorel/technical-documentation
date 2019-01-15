@@ -71,3 +71,9 @@ sudo apt-get update && sudo apt-get install yarn
 ```
 
 See the [commands documentation](https://yarnpkg.com/en/docs/usage).
+
+sudo apt-get update sometimes fails because of the GPG key which needs to be updated once in a while. Updating it with the following command solves the issue ([source](curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -)):
+
+```sh
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+```
