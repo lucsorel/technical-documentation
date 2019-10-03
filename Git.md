@@ -17,9 +17,32 @@ git config --global pull.rebase true
 git config --global mergetool.keepBackup false
 ```
 
+Instead of using global configuration properties for git (in case you have repos requiring different configurations), you can use different variations of the following script:
+
+```sh
+#! /bin/bash
+
+# sets the git config for a personnal project
+function gitPersonnalConfig {
+  git config push.default simple
+  git config user.name "Luc Sorel"
+  git config user.email "myemail@is-not.spam"
+  git config mergetool.keepBackup false
+  git config pull.rebase true
+}
+
+gitPersonnalConfig
+```
+
+Once I have cloned or created a repo, I run the aforementionned script from within the repo:
+
+```sh
+../git-config.sh
+```
+
 # Feature branch workflow
 
-The `master` branch is production branch, it contains the latest version of the code. It must always build, if the continuous integration breaks on master, it is the team priority to **fix it before any other merge or commit are made**. `Master` is also the base branch for developing **feature branches**.
+The `master` branch is production branch, it contains the latest version of the code. It must always build, if the continuous integration breaks on `master`, it is the team priority to **fix it before any other merge or commit are made**. `Master` is also the base branch for developing **feature branches**.
 
 A feature branch should:
 * contain few modifications
@@ -33,9 +56,9 @@ The workflow is as follow:
 
 ## Create a feature branch
 
-* start from master (ensures it is fresh): `git checkout master; git pull --rebase`
+* start from `master` (ensures it is fresh): `git checkout master; git pull --rebase`
 
-* create the new branch (with your naming conventions, which can include an issue number) and push it to the remote repository:
+* create the new branch (with your naming conventions, which can include an issue number) and push it to the remote repository (or use the system of merge/pull requests of your git provider):
 
 ```sh
 git checkout -b 42-add-browser-notifications
