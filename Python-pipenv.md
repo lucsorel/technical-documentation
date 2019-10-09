@@ -67,6 +67,15 @@ pipenv install numpy
 # add a development dependency
 pipenv install pylint --dev
 
-# from a git/branch repo
-pipenv install git+https://github.com/Ouest-France/sipy-logger.git@packaging#egg=sipy-logger
+# from a git/branch repo (should be installed in editable mode to ensure an up-to-date copy of the repository and that it includes all known dependencies)
+pipenv install -e git+https://github.com/Ouest-France/sipy_logger.git@packaging#egg=sipy_logger
+```
+
+Library removal:
+
+```sh
+# production, development and git dependendy are removable with the same command format
+pipenv uninstall numpy
+pipenv uninstall pylint
+pipenv uninstall sipy_logger
 ```
