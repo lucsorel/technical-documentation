@@ -7,8 +7,8 @@ The `--global` flag saves the configuration in `~/.gitconfig`. Remove it to save
 git config --global user.name "Firstname Lastname"
 git config --global user.email "your.email@provider.com"
 
-# push only the commits of the current branch (default behavior)
-git config --global push.default matching
+# push only the commits of the current branch
+git config --global push.default current
 
 # avoids merge commits when rebasing
 git config --global pull.rebase true
@@ -28,6 +28,7 @@ function gitPersonnalConfig {
   git config user.name "Luc Sorel"
   git config user.email "myemail@is-not.spam"
   git config pull.rebase true
+  git config push.default current
   git config mergetool.keepBackup false
   git config merge.tool p4v
   git config diff.guitool p4v
@@ -83,6 +84,7 @@ git rebase master
 # validate (tests)
 git push -f origin 42-add-browser-notifications
 ```
+
 Rebasing `master` on the commits of your branch can become painful, particularly if you do it often and there are some conflicts
 a long list of commits of your branch. To reduce the pain:
 * squash the many commits of your branch (see § **Finish the feature branch**) and `push --force` this new commits history (ensure that other people working on the branch are not working on it, that you have the most recent state of the branch)
