@@ -27,8 +27,10 @@ function gitPersonnalConfig {
   git config push.default simple
   git config user.name "Luc Sorel"
   git config user.email "myemail@is-not.spam"
-  git config mergetool.keepBackup false
   git config pull.rebase true
+  git config mergetool.keepBackup false
+  git config merge.tool p4v
+  git config diff.guitool p4v
 }
 
 gitPersonnalConfig
@@ -152,7 +154,7 @@ git bisect reset
 
 I use [P4Merge](https://www.perforce.com/downloads/visual-merge-tool) to handle the conflicts (when rebasing or merging):
 
-* [download P4Merge](https://www.perforce.com/downloads/helix#product-10) and dezip it in `~/Apps`
+* [download P4Merge](https://www.perforce.com/downloads/visual-merge-tool) and dezip it in `~/Apps`
 * declares `P4Merge tools` in your `PATH` to let git know about this tool when it encounters a conflict, by adding these instructions in your `~/.profile` file:
 
 ```sh
@@ -160,6 +162,13 @@ I use [P4Merge](https://www.perforce.com/downloads/visual-merge-tool) to handle 
 if [ -d "$HOME/Apps/p4v/bin" ] ; then
     PATH="$HOME/Apps/p4v/bin:$PATH"
 fi
+```
+
+Configure Git to use the `p4merge` UI when handling conflicts:
+
+```sh
+git config --add merge.tool p4v
+git config diff.guitool p4v
 ```
 
 Then you will be able to launch P4Merge when a conflict occurs while rebasing/merging:
