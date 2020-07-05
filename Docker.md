@@ -15,7 +15,7 @@ wget -qO- https://get.docker.com/ | sh
 uname -r
 
 # install packages to allow apt to use a repository over HTTPS
-sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+sudo apt-get install apt-transport-https ca-certificates curl software-properties-common gnupg-agent
 
 # adds the gpg key of the Docker releases repository
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -29,6 +29,7 @@ lsb_release -cs
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 ## (LinuxMint)
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 
 # updates the repository update policy
 sudo apt-get update
@@ -44,6 +45,14 @@ sudo apt-get install docker-ce
 # runs Docker and checks its version
 sudo service docker start
 docker -v
+```
+
+Adds the current user to the docker group (see [Post-installation steps for Linux](https://docs.docker.com/engine/install/linux-postinstall/)):
+
+```sh
+sudo groupadd docker
+sudo usermod -aG docker $USER
+# then log out and log in again to account for the change
 ```
 
 ## Tuning
