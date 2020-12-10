@@ -8,10 +8,12 @@ I have used 2 dependency management tools: Pipenv (which I don't use anymore) an
 ## Python version switching
 
 ### Pyenv (local python version)
+
 Pyenv installs the binaries of the versions on-demand, and allows to specify a python version for any folder.
 It intercepts the calls to python & its libs and redirects them to the specified binaries.
 
 #### Installation
+
 Main doc page: [Pyenv installation documentation](https://github.com/pyenv/pyenv#installation).
 
 * Linux: use the [automatic installation](https://github.com/pyenv/pyenv-installer)
@@ -32,15 +34,24 @@ fi
 #### Specify a python version in a project folder
 
 ```sh
-# install python 3.7.6 binaries on your system once
-pyenv install 3.7.6
+# lists all the versions that can be installed (long list!)
+pyenv install -l
+
+# lists all the 3.8 versions that can be installed
+pyenv install -l | grep "3.8"
+
+# installs python 3.8.6 binaries on your system once
+pyenv install 3.8.6
 
 cd my-projects/project
-pyenv local 3.7.6
+pyenv local 3.7.8
 # -> it creates a '.python-version' file. Version this file, to document & enforce the python version used in the project)
 ```
 
+See the documentation of [pyenv's commands](https://github.com/pyenv/pyenv/blob/master/COMMANDS.md).
+
 ### update-alternatives [unadvised: can easily break your system]
+
 Some Ubuntu-based distributions are packaged with python3.6 and you may need a 3.7 version to be installed alongside in your system.
 I combine the use of [a PPA to install python 3.7](https://linuxize.com/post/how-to-install-python-3-7-on-ubuntu-18-04/) and the [configuration of `update-alternatives`](https://stackoverflow.com/questions/43062608/how-to-update-alternatives-to-python-3-without-breaking-apt) to allow switching between 3.6 and 3.7 (but I recommend NOT DOING it anymore):
 
