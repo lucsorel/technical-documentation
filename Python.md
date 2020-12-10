@@ -3,7 +3,7 @@
 
 I only use python 3.x (for the use of generators and because 2.x will be deprecated in 2020).
 
-I have used 2 dependency management tools: Pipenv (which I don't use anymore) and Poetry (which I recomment).
+I have used 2 dependency management tools: Pipenv (which I don't use anymore) and Poetry (which I recommend).
 
 ## Python version switching
 
