@@ -9,6 +9,14 @@ I have used 2 dependency management tools: Pipenv (which I don't use anymore) an
 
 ### Pyenv (local python version)
 
+Prerequisites (see [common build problems](https://github.com/pyenv/pyenv/wiki/Common-build-problems)):
+
+```sh
+sudo apt-get install -y build-essential libssl-dev zlib1g-dev libbz2-dev \
+libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
+```
+
 Pyenv installs the binaries of the versions on-demand, and allows to specify a python version for any folder.
 It intercepts the calls to python & its libs and redirects them to the specified binaries.
 
@@ -44,7 +52,7 @@ pyenv install -l | grep "3.8"
 pyenv install 3.8.6
 
 cd my-projects/project
-pyenv local 3.7.8
+pyenv local 3.8.6
 # -> it creates a '.python-version' file. Version this file, to document & enforce the python version used in the project)
 ```
 
