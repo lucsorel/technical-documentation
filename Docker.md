@@ -8,7 +8,7 @@ Two options:
 wget -qO- https://get.docker.com/ | sh
 ```
 
-* the official way from the [Docker installation guide for Ubuntu](https://docs.docker.com/engine/installation/ubuntulinux/).
+* the official way from the [Docker installation guide for Ubuntu](https://docs.docker.com/engine/install/ubuntu/).
 
 ```bash
 # checks the Kernel version (must be >3.1.0)
@@ -36,12 +36,9 @@ sudo apt-get update
 sudo apt-get purge lxc-docker docker docker-engine docker.io
 sudo apt-cache madison docker-ce
 
-# installs the linux-image-extra package to enable the use of the aufs storage driver
-sudo apt-get install linux-image-extra-$(uname -r) # remove the trailing '-lowlatency'
-
 # installs Docker
-sudo apt-get install docker-ce
-
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+ 
 # runs Docker and checks its version
 sudo service docker start
 docker -v
