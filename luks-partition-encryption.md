@@ -70,7 +70,7 @@ if [ -d "$CIPHERED_DIR" ]; then
 else
   echo "creating $CIPHERED_DIR..."
   sudo mkdir -p $CIPHERED_DIR
-  sudo chown USER:USER $CIPHERED_DIR
+  sudo chown $USER:$USER $CIPHERED_DIR
   echo "$CIPHERED_DIR created"
 fi
 
