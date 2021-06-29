@@ -104,11 +104,33 @@ poetry self update
 
 ### Local virtual environment
 
-Add the following section in the generated `pyproject.toml` file to create a virtual environment and to locate it within the project folder (makes libraries' documentation browsing and docker image generation easier):
+Having a local virtual environment within the project has multiple advantages
+
+* the `.venv` folder where the dependencies and binary files lie is then browsable (editable and debuggable) from your IDE
+* when building a docker image, you can also bundle this folder directly in the image
+
+There are several ways to tell poetry to use a local virtual environment:
+
+* along the `pyproject.toml` file, create a the following `poetry.toml` file:
+
 ```toml
 [virtualenvs]
 create = true
 in-project = true
+```
+
+* the following configuration commands create the aforementioned `poetry.toml` file:
+
+```sh
+poetry config virtualenvs.create true --local
+poetry config virtualenvs.in-project true --local
+```
+
+* or define the following environment variables
+
+```sh
+export POETRY_VIRTUALENVS_CREATE=true
+export POETRY_VIRTUALENVS_IN_PROJECT=true
 ```
 
 ### Initialize a project
@@ -167,8 +189,8 @@ fi
 echo "$(date '+%Y-%m-%d_%H:%M:%S') $(poetry --version) will be used to install dependencies"
 
 # installs the project dependencies
-export POETRY_VIRTUALENVS_CREATE=true
-export POETRY_VIRTUALENVS_IN_PROJECT=true
+poetry config virtualenvs.create true --local
+poetry config virtualenvs.in-project true --local
 echo "$(date '+%Y-%m-%d_%H:%M:%S') poetry ${depsinstall}"
 poetry ${depsinstall}
 ```
